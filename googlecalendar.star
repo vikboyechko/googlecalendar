@@ -234,29 +234,8 @@ def main(config):
             ),
         )
     
-    # First, check if "Test Event" is in the list
-    selected_event = None
-    for event in events:
-        if "Test Event" in event["title"]:
-            selected_event = event
-            break
-    
-    # If Test Event wasn't found, use the last event (newest)
-    if not selected_event and len(events) > 0:
-        selected_event = events[-1]
-    
-    # Ensure we have a selected event (defensive coding)
-    if not selected_event:
-        return render.Root(
-            child=render.Column(
-                children=[
-                    render.Text("No events found", font=font),
-                    render.Text("Check calendar", font=font),
-                ],
-                main_align="center",
-                expanded=True,
-            ),
-        )
+    # Select the most recent event (last in the list)
+    selected_event = events[-1]
     
     # Display based on configuration
     if text_only:
