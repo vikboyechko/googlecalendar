@@ -1,3 +1,10 @@
+"""
+Applet: Any Calendar
+Summary: Display any ICS calendar
+Description: Show current or upcoming events from a Google or Outlook calendar with just an ICS link - no login necessary. Can choose to show time or only the event title - perfect for scheduling announcements.
+Author: Vik Boyechko
+"""
+
 load("http.star", "http")
 load("render.star", "render")
 load("schema.star", "schema")

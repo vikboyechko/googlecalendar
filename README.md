@@ -8,10 +8,10 @@ This is a great way to display messages, announcements, reminders, and of course
 
 ## Features
 
-- Shows your current active events or all-day events
+- Shows only current day's events (today)
+- Smart prioritization: current events > all-day events > upcoming events today
+- Hides completely when no events are scheduled for today
 - Works with iCal URLs from Google Calendar
-- Prioritizes current events first, then all-day events
-- For multiple events in either category, shows the most recently created
 - Displays event time and title
 - Configurable timezone
 - Option to show text-only view without time information - perfect for announcements
@@ -20,6 +20,14 @@ This is a great way to display messages, announcements, reminders, and of course
 - Customizable fonts to fit your visual preference
 - Smart marquee that only scrolls for long text
 - Centered display formats for better readability
+
+## Event Selection Logic
+
+The app intelligently selects which event to display following this priority:
+1. **Current events** - Events happening right now are displayed first
+2. **All-day events** - If no current events, displays today's all-day events
+3. **Upcoming events** - If no current or all-day events, shows the next event scheduled for today
+4. **Hide when empty** - If no events are happening today, the app disappears entirely
 
 ## Setup
 
