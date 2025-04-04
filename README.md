@@ -1,12 +1,12 @@
 # Google Public Calendar for Tidbyt
 
-This Tidbyt app displays your current Google Calendar events on your Tidbyt device. It actually works with any iCAL public URL that ends with .ICS, so any public calendar like Outlook works too, but Google Calendar in my opinion is the easiest to manage. 
+This Tidbyt app displays your current Google Calendar events on your Tidbyt device. It actually works with any iCAL public URL that ends with .ICS, so any public calendar like Outlook works too, but Google Calendar in my opinion is the easiest to manage.
 
 Unlike the official Tidbyt Google Calendar app, you don't need to worry about OAuth authentication, you don't have to own the calendar, and you can create an entirely separate calendar just for this Tidbyt app.
 
 In addition to showing event times, you can also turn off the time display and only show the event title.This is a great way to display messages, announcements, reminders, and of course meetings and events - all handled through your calendar without having to open up the Tidbyt app more than once.
 
-![Google Public Calendar for Tidbyt](./images/google-calendar-tidbyt-demo.jpg)
+![Google Public Calendar for Tidbyt](./images/google-calendar-tidbyt-demo-2.jpg)
 
 ## Features
 
@@ -27,6 +27,7 @@ In addition to showing event times, you can also turn off the time display and o
 ## Event Selection Logic
 
 The app intelligently selects which event to display following this priority:
+
 1. **Current events** - Event happening right now is displayed first
 2. **Upcoming events** - If no current event, shows the next event scheduled for today
 3. **All-day events** - If no current or upcoming event, displays today's all-day event
@@ -35,6 +36,7 @@ The app intelligently selects which event to display following this priority:
 ## Cross-Midnight Events
 
 The app correctly handles events that span across midnight:
+
 - Events starting today and ending after midnight are displayed properly
 - Events remain visible until they actually end, even if that's the next day
 - This is particularly useful for tracking events like late meetings, parties, or transportation schedules
@@ -42,6 +44,7 @@ The app correctly handles events that span across midnight:
 ## Setup
 
 1. Get an .iCS URL from your Google Calendar:
+
    - Open Google Calendar
    - Find the calendar in the left sidebar
    - Click the three dots next to the calendar name
@@ -51,6 +54,7 @@ The app correctly handles events that span across midnight:
    - Copy the "Public address in iCal format" - this URL ends with .ics
 
 2. Get an .iCS URL from your Outlook Calendar:
+
    - Open Outlook Calendar in your browser (outlook.office.com)
    - Click the gear icon in the top right corner
    - Select "Calendar" in the left sidebar
@@ -58,7 +62,7 @@ The app correctly handles events that span across midnight:
    - Publish your calendar
    - Copy the link to the calendar - this URL ends with .ics
 
-2. In the Tidbyt app:
+3. In the Tidbyt app:
    - Add the Any Calendar app
    - Paste your iCal URL into the "Calendar Link" field
    - Set your timezone (defaults to America/New_York)
@@ -72,12 +76,14 @@ This app requires an iCal URL (ending in .ics) and does not work with regular Go
 ## Customization Options
 
 ### Colors
+
 - **Time Background Color**: Color behind the time display (default: Google Blue)
 - **Time Text Color**: Color of the time text (default: White)
 - **Event Background Color**: Color behind the event title (default: Black)
 - **Event Text Color**: Color of the event title text (default: Light Green)
 
 ### Display Modes
+
 - **Regular Mode**: Shows time at the top and event title below
 - **Text-Only Mode**: Shows only the event title without time information
 
@@ -91,6 +97,7 @@ The app respects event timezones and displays them according to your configured 
 ## Marquee Scrolling
 
 The app intelligently determines when to scroll text:
+
 - Short event titles are displayed statically and centered
 - Longer titles that wouldn't fit on screen are automatically scrolled vertically
 - The scrolling behavior is optimized to avoid long blank spaces
@@ -98,11 +105,13 @@ The app intelligently determines when to scroll text:
 ## Troubleshooting
 
 If no events appear:
+
 - Make sure your calendar is publicly accessible
 - Double-check the URL format
 - Verify that you have current or all-day events happening now
 
 If you're experiencing issues:
+
 - Make sure your ICS URL is correct and accessible (paste it into your browser and see if it downloads an .ics file)
 - The app displays a clear error message when there are connectivity issues
 - The app will indicate when no events are found in the calendar
@@ -110,6 +119,7 @@ If you're experiencing issues:
 ## Error Handling
 
 The app includes robust error handling:
+
 - Invalid date/time formats are gracefully handled
 - Malformed calendar data won't crash the app
 - Clear error messages are displayed when issues occur
