@@ -17,9 +17,10 @@ This is a great way to display messages, announcements, reminders, and of course
 - Option to show text-only view without time information - perfect for announcements
 - Automatic scrolling for long event titles
 - Fully customizable colors for time/event backgrounds and text
-- Customizable fonts to fit your visual preference
+- Optimized for Tom Thumb font to ensure maximum readability
 - Smart marquee that only scrolls for long text
 - Centered display formats for better readability
+- Properly handles events that cross midnight (e.g., events that start today and end after midnight)
 
 ## Event Selection Logic
 
@@ -28,6 +29,13 @@ The app intelligently selects which event to display following this priority:
 2. **All-day events** - If no current events, displays today's all-day events
 3. **Upcoming events** - If no current or all-day events, shows the next event scheduled for today
 4. **Hide when empty** - If no events are happening today, the app disappears entirely
+
+## Cross-Midnight Events
+
+The app correctly handles events that span across midnight:
+- Events starting today and ending after midnight are displayed properly
+- Events remain visible until they actually end, even if that's the next day
+- This is particularly useful for tracking events like late meetings, parties, or transportation schedules
 
 ## Setup
 
@@ -44,7 +52,7 @@ The app intelligently selects which event to display following this priority:
    - Add the Google Calendar app
    - Paste your iCal URL into the "Calendar Link" field
    - Set your timezone (defaults to America/New_York)
-   - Customize the display options (colors, fonts, text-only mode)
+   - Customize the display options (colors, text-only mode)
    - Save your configuration
 
 ## Important Note
@@ -58,11 +66,6 @@ This app requires an iCal URL (ending in .ics) and does not work with regular Go
 - **Time Text Color**: Color of the time text (default: White)
 - **Event Background Color**: Color behind the event title (default: Black)
 - **Event Text Color**: Color of the event title text (default: Light Green)
-
-### Fonts
-- **Tom Thumb**: Default font, compact and readable
-- **TB-8**: Alternative small font
-- **5x8**: Slightly larger font
 
 ### Display Modes
 - **Regular Mode**: Shows time at the top and event title below
